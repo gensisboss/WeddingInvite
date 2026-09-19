@@ -8,6 +8,7 @@ export default defineConfig({
       name: 'copy-article-assets',
       closeBundle() {
         const outDir = resolve('dist');
+        cpSync(resolve('app.js'), resolve(outDir, 'app.js'));
         cpSync(resolve('article-local.html'), resolve(outDir, 'article-local.html'));
         cpSync(resolve('assets'), resolve(outDir, 'assets'), { recursive: true });
       },
